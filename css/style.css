@@ -1,0 +1,73 @@
+#termometre {
+  background-color: #E0D7D6;
+  box-shadow : 0 5px 5px #CCC;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  width: 50px;
+  margin-bottom: 65px;
+}
+/* grey base */
+#termometre::before { 
+    background-color: #E0D7D6;
+    border-radius: 50%;
+    box-shadow : 0 5px 5px #CCC;
+    content: '';
+    height: 100px;
+    left: -25px;
+    position: absolute;
+    top: 160px;
+    width:100px; 
+}
+/* blue  */
+#termometre::after { 
+    background-color: rgb(108, 176, 252);
+    content: '';
+    height: 100%;
+    left: 10px;
+    position: absolute;   
+    width:30px; 
+}
+/* blue base */
+#termometreBase {
+  background-color: rgb(108, 176, 252);
+  border-radius: 50%;
+  content: '';
+  height: 75px;
+  left: -12px;
+  position: absolute;
+  top: 173px;
+  width:75px;
+  bottom: 0; 
+}
+
+@keyframes bargrowth{
+  0%   {max-height: 0%;}
+  100%  {max-height: 100%;}
+}
+#termometre::after {
+  animation: bargrowth 1000ms ease;
+  bottom:0;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.control__item {
+  height: 35px;
+  width: 35px;
+  background-color: #fff;
+  border: thin solid #ccc;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0 4px 0 #006ab0;
+  margin: 0 5px;
+}
+.control__item:focus {
+  outline: none;
+}
+.control__item:hover {
+  box-shadow: 0 0 4px 1px #024e81;
+}
